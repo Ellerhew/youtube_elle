@@ -3,8 +3,8 @@ import styles from "./video_item.module.css";
 
 const VideoItem = (props) => {
 	const onClick = () => {
-		console.log(props.video.id);
-		props.onClick(props.video.id);
+		console.log(props.video);
+		props.onClick(props.video);
 	};
 
 	return (

@@ -1,26 +1,26 @@
 import React from "react";
+import styles from "./video_selected.module.css";
 
 const VideoSelected = (props) => {
-	if (props.videoId) {
+	if (props.selectedVideo) {
 		return (
-			<>
-				<div className="videoPlayer">
+			<div className={styles.videoAndDescription}>
+				<div className={styles.container}>
 					<iframe
+						className={styles.videoPlayer}
 						id="player"
 						type="text/html"
-						width="640"
-						height="360"
-						src={`http://www.youtube.com/embed/${props.videoId}?enablejsapi=1&origin=http://example.com`}
+						src={`http://www.youtube.com/embed/${props.selectedVideo.id}?enablejsapi=1&origin=http://example.com`}
 						frameborder="0"
 					></iframe>
 				</div>
 
-				<div>
-					{/* <h2>{props.video.snippet.title}</h2> */}
-					{/* <h3>{props.video.snippet.channelTitle}</h3> */}
-					{/* <p>{props.video.snippet.description}</p> */}
+				<div className={styles.description}>
+					<h2>{props.selectedVideo.snippet.title}</h2>
+					<h3>{props.selectedVideo.snippet.channelTitle}</h3>
+					<p>{props.selectedVideo.snippet.description}</p>
 				</div>
-			</>
+			</div>
 		);
 	} else {
 		return <></>;

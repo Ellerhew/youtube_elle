@@ -6,7 +6,7 @@ import VideoSelected from "./components/video_selected/video_selected";
 
 function App({ youtube }) {
 	const [videos, setVideos] = useState([]);
-	const [selectedVideoId, setSelectedVideoID] = useState();
+	const [selectedVideo, setSelectedVideo] = useState();
 
 	const search = (query) => {
 		youtube
@@ -20,15 +20,15 @@ function App({ youtube }) {
 			.then((videos) => setVideos(videos));
 	}, []);
 
-	const onClick = (videoId) => {
-		setSelectedVideoID(videoId);
+	const onClick = (video) => {
+		setSelectedVideo(video);
 	};
 
 	return (
 		<div className={styles.app}>
 			<SearchHeader onSearch={search} />
 			<div className="content">
-				<VideoSelected videoId={selectedVideoId} />
+				<VideoSelected selectedVideo={selectedVideo} />
 				<VideoList videos={videos} onClick={onClick} />
 			</div>
 		</div>
