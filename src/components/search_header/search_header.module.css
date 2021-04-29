@@ -1,0 +1,56 @@
+.header {
+	background-color: black;
+	color: white;
+	display: flex;
+	height: 3rem;
+	padding: 0.5rem;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	font-size: 1.3rem;
+	margin-right: 0.5rem;
+	font-weight: bold;
+}
+
+.logo:hover {
+	cursor: pointer;
+}
+
+.logo img {
+	width: 2.2rem;
+	margin-right: 0.2rem;
+}
+
+.search {
+	flex-basis: 100%;
+	display: flex;
+}
+
+.input {
+	flex-basis: 100%;
+	outline: none;
+	border: none;
+	padding: 0rem 0.5rem;
+	font-size: 1rem;
+}
+
+.button {
+	width: 2.2rem;
+	background-color: rgb(122, 121, 121);
+	border: none;
+	outline: none;
+	transition: transform 100ms ease-in;
+	padding: 0.3rem;
+}
+
+.button:hover {
+	cursor: pointer;
+	transform: scale(1.03);
+}
+
+.button img {
+	height: 100%;
+	/* width: 100%; */
+}
