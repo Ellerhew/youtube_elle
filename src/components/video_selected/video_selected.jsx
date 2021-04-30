@@ -11,7 +11,7 @@ const VideoSelected = (props) => {
 						id="ytplayer"
 						type="text/html"
 						className={styles.videoPlayer}
-						src={`http://www.youtube.com/embed/${props.selectedVideo.id}`}
+						src={`https://www.youtube.com/embed/${props.selectedVideo.id}`}
 						frameBorder="0"
 						allowFullscreen
 					/>
