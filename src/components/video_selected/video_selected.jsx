@@ -8,12 +8,13 @@ const VideoSelected = (props) => {
 				<div className={styles.container}>
 					<iframe
 						title="video player"
-						className={styles.videoPlayer}
-						id="player"
+						id="ytplayer"
 						type="text/html"
-						src={`http://www.youtube.com/embed/${props.selectedVideo.id}?enablejsapi=1&origin=http://example.com`}
+						className={styles.videoPlayer}
+						src={`https://www.youtube.com/embed/${props.selectedVideo.id}`}
 						frameBorder="0"
-					></iframe>
+						allowFullscreen
+					/>
 				</div>
 
 				<div className={styles.description}>
