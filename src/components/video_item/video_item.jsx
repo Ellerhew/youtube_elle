@@ -1,14 +1,16 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./video_item.module.css";
 
-const VideoItem = (props) => {
+const VideoItem = memo((props) => {
 	const onClick = () => {
-		console.log(props.video);
 		props.onClick(props.video);
 	};
 
 	return (
-		<li className={styles.videoItem} onClick={onClick}>
+		<li
+			className={`${props.selectedVideo ? styles.vertical : styles.videoItem}`}
+			onClick={onClick}
+		>
 			<div className={styles.itemBox}>
 				<div className={styles.thumbnailBox}>
 					<img
@@ -26,6 +28,6 @@ const VideoItem = (props) => {
 			</div>
 		</li>
 	);
-};
+});
 
 export default VideoItem;
