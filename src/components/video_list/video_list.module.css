@@ -3,7 +3,8 @@
 	padding-left: 0;
 	display: flex;
 	flex-wrap: wrap;
-	margin: 0;
+	margin: 1rem 0rem;
+	justify-content: space-between;
 }
 
 .vertical {

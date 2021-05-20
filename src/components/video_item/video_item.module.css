@@ -1,13 +1,7 @@
 .videoItem {
 	display: flex;
-	width: 50%;
-	height: 6.5rem;
-}
-
-.vertical {
-	display: flex;
-	width: 100%;
-	height: 6.5rem;
+	width: 24%;
+	margin: 0.2rem;
 }
 
 .itemBox {
@@ -15,10 +9,25 @@
 	width: 100%;
 	margin: 0.1rem;
 	display: flex;
+	flex-direction: column;
 	transition: transform 100ms ease-in;
 }
 
-.itemBox:hover {
+.vertical_videoItem {
+}
+
+.vertical_itemBox {
+	display: flex;
+	transition: transform 100ms ease-in;
+
+	height: 8rem;
+	border: solid 1px white;
+	/* margin-bottom: 0.3rem; */
+	margin: 0.3rem 1rem;
+}
+
+.itemBox:hover,
+.vertical_itemBox:hover {
 	cursor: pointer;
 	transform: scale(1.02);
 }
@@ -30,21 +39,47 @@
 	padding: 0.8rem;
 }
 
-.title {
-	font-size: 0.85rem;
+.vertical_description {
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0.8rem;
 }
 
-.channel {
+.title {
+	font-size: 0.85rem;
+	color: white;
+	/* text-overflow: ellipsis; */
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+.detail {
+	display: flex;
+	align-items: center;
+}
+
+.channel,
+.viewCount {
 	font-size: 0.8rem;
-	color: rgb(112, 111, 111);
+	color: rgb(185, 183, 183);
 }
 
 .thumbnailBox {
-	width: 11rem;
 	display: flex;
 	justify-content: center;
 }
 
 .thumbnail {
+	width: 100%;
 	height: 100%;
+}
+
+@media screen and (max-width: 75rem) {
+	.videoItem {
+		width: 32%;
+	}
 }

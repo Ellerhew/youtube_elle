@@ -14,10 +14,14 @@ class Youtube {
 				part: "snippet",
 				maxResults: 25,
 				q: query,
+				type: "video",
 			},
 		});
 
-		return response.data.items;
+		return response.data.items.map((item) => ({
+			...item,
+			id: item.id.videoId,
+		}));
 	}
 
 	async mostPopular() {

@@ -1,7 +1,7 @@
 import React, { memo, useRef } from "react";
 import styles from "./search_header.module.css";
 
-const SearchHeader = memo(({ onSearch }) => {
+const SearchHeader = memo(({ onSearch, mostPopular }) => {
 	const inputRef = useRef();
 
 	const handleSubmit = () => {
@@ -19,11 +19,15 @@ const SearchHeader = memo(({ onSearch }) => {
 		handleSubmit();
 	};
 
-	console.log("searchheader");
+	const backToPopular = () => {
+		mostPopular();
+		inputRef.current.value = "";
+	};
+
 	return (
 		<div className={styles.header}>
-			<div className={styles.logo}>
-				<img src={"./images/logo.png"} alt="logo"></img>
+			<div className={styles.logo} onClick={backToPopular}>
+				<img src={"react_basic_youtube/images/logo.png"} alt="logo"></img>
 				<span>Youtube</span>
 			</div>
 			<div className={styles.search}>
@@ -34,8 +38,13 @@ const SearchHeader = memo(({ onSearch }) => {
 					onKeyPress={onKeyPress}
 				/>
 				<button className={styles.button} type="submit" onClick={onClick}>
-					<img src={"./images/search.png"} alt="button"></img>
+					<img src={"react_basic_youtube/images/search.png"} alt="button"></img>
 				</button>
+			</div>
+			<div className={styles.sideMenu}>
+				<i className={"fas fa-video"}></i>
+				<i className={`fas fa-th`} />
+				<i className={"fas fa-bell"}></i>
 			</div>
 		</div>
 	);

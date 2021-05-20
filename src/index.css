@@ -13,7 +13,7 @@ code {
 }
 
 #root {
-	max-width: 50em;
+	min-width: 860px;
 	display: flex;
 	justify-content: center;
 	margin: auto;

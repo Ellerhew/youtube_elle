@@ -18,21 +18,26 @@ function App({ youtube }) {
 		[youtube]
 	);
 
-	useEffect(() => {
+	const mostPopular = useCallback(() => {
 		youtube
 			.mostPopular() //
 			.then((videos) => setVideos(videos));
+		setSelectedVideo();
 	}, [youtube]);
 
 	const onClick = (video) => {
 		setSelectedVideo(video);
 	};
 
+	useEffect(() => {
+		mostPopular();
+	}, [mostPopular]);
+
 	return (
 		<div className={styles.app}>
-			<SearchHeader onSearch={search} />
+			<SearchHeader onSearch={search} mostPopular={mostPopular} />
 			<div className={styles.content}>
-				<VideoSelected selectedVideo={selectedVideo} />
+				{selectedVideo && <VideoSelected selectedVideo={selectedVideo} />}
 				<VideoList
 					videos={videos}
 					onClick={onClick}
