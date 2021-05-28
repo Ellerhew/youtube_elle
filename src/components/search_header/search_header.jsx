@@ -27,7 +27,7 @@ const SearchHeader = memo(({ onSearch, mostPopular }) => {
 	return (
 		<div className={styles.header}>
 			<div className={styles.logo} onClick={backToPopular}>
-				<img src={"react_basic_youtube/images/logo.png"} alt="logo"></img>
+				<img src={"youtube_elle/images/logo.png"} alt="logo"></img>
 				<span>Youtube</span>
 			</div>
 			<div className={styles.search}>
@@ -38,7 +38,7 @@ const SearchHeader = memo(({ onSearch, mostPopular }) => {
 					onKeyPress={onKeyPress}
 				/>
 				<button className={styles.button} type="submit" onClick={onClick}>
-					<img src={"react_basic_youtube/images/search.png"} alt="button"></img>
+					<img src={"youtube_elle/images/search.png"} alt="button"></img>
 				</button>
 			</div>
 			<div className={styles.sideMenu}>
